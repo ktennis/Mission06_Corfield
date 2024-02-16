@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "newInfo";
+}
+@model JoelContext
+
+<div class="text-center">
+    <h1 class="display-4">New Movie Form</h1>
+</div>
+<form method="post">
+    <label asp-for='Category'>Category*</label><br>
+    <input asp-for='Category'><br>
+
+    <label asp-for="Title">Title*</label><br>
+    <input asp-for="Title"><br>
+
+    <label asp-for="Year">Year*</label><br>
+    <input asp-for="Year"><br>
+
+    <label asp-for="Director">Director*</label><br>
+    <input asp-for="Director"><br>
+
+    <label asp-for="Rating">Rating*</label><br>
+    <select asp-for="Rating">
+        <option value="" selected disabled>--Select Rating--</option>
+        <option value="G">G</option>
+        <option value="PG">PG</option>
+        <option value="PG-13">PG-13</option>
+        <option value="R">R</option>
+    </select><br>
+
+    <label asp-for="Edited">Edited</label><br>
+    <input asp-for="Edited" type="radio" id="edited_yes" name="edited" value="true"> Yes
+    <input asp-for="Edited" type="radio" id="edited_no" name="edited" value="false"> No<br>
+
+    <label asp-for="LentTo">Lent To</label><br>
+    <input asp-for="LentTo"><br>
+
+    <label asp-for="Notes">Notes</label><br>
+    <textarea asp-for="Notes" rows="2" cols="25" maxlength="25"></textarea><br>
+
+    <input type="submit" value="Submit">
+</form>
+
