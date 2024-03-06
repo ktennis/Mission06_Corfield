@@ -14,6 +14,7 @@ builder.Services.AddDbContext<MoviesContext>(options =>
     options.UseSqlite(builder.Configuration["ConnectionStrings:MovieConnection"]);
 });
 
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

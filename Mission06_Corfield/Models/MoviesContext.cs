@@ -2,15 +2,16 @@
 
 namespace Mission06_Corfield.Models
 {
+    // The MoviesContext class inherits from DbContext, which is provided by Entity Framework Core
     public class MoviesContext : DbContext
     {
-            public MoviesContext(DbContextOptions<MoviesContext> options) : base(options)
-            {
+        // Constructor that accepts DbContextOptions as a parameter
+        public MoviesContext(DbContextOptions<MoviesContext> options) : base(options)
+        {
+            // Passes the options to the base DbContext class constructor
+        }
 
-            }
-            public DbSet<JoelContext> Movies { get; set; }
-
-        
+        // DbSet property to represent the movies table in the database
+        public DbSet<Joel> Movies { get; set; }
     }
 }
-

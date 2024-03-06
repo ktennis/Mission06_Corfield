@@ -1,13 +1,16 @@
 ﻿@{
     ViewData["Title"] = "newInfo";
 }
-@model JoelContext
+@model Joel
 
 <div class="text-center">
     <h1 class="display-4">New Movie Form</h1>
 </div>
 <form method="post">
-    <label asp-for='Category'>Category*</label><br>
+
+    <input type="hidden" asp-for="MovieId" />
+
+    <label asp-for='Category'>Category</label><br>
     <input asp-for='Category'><br>
 
     <label asp-for="Title">Title*</label><br>
@@ -16,10 +19,10 @@
     <label asp-for="Year">Year*</label><br>
     <input asp-for="Year"><br>
 
-    <label asp-for="Director">Director*</label><br>
+    <label asp-for="Director">Director</label><br>
     <input asp-for="Director"><br>
 
-    <label asp-for="Rating">Rating*</label><br>
+    <label asp-for="Rating">Rating</label><br>
     <select asp-for="Rating">
         <option value="" selected disabled>--Select Rating--</option>
         <option value="G">G</option>
@@ -28,16 +31,24 @@
         <option value="R">R</option>
     </select><br>
 
-    <label asp-for="Edited">Edited</label><br>
-    <input asp-for="Edited" type="radio" id="edited_yes" name="edited" value="true"> Yes
-    <input asp-for="Edited" type="radio" id="edited_no" name="edited" value="false"> No<br>
+    <label asp-for="Edited">Edited*</label><br>
+    <input asp-for="Edited" type="radio" id="edited_yes" name="edited" value="Yes"> Yes
+    <input asp-for="Edited" type="radio" id="edited_no" name="edited" value="No"> No<br>
+
 
     <label asp-for="LentTo">Lent To</label><br>
     <input asp-for="LentTo"><br>
+
+    <label asp-for="Plex">Copied to Plex*</label><br>
+    <input asp-for="Plex" type="radio" id="plex_yes" name="plex" value="1"> Yes
+    <input asp-for="Plex" type="radio" id="plex_no" name="plex" value="0"> No<br>
+
 
     <label asp-for="Notes">Notes</label><br>
     <textarea asp-for="Notes" rows="2" cols="25" maxlength="25"></textarea><br>
 
     <input type="submit" value="Submit">
+
+    <div asp-validation-summary="All"></div>
 </form>
 
