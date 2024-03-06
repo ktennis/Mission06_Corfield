@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace Mission06_Corfield.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : Controller //test
     {
         private MoviesContext _context;
         public HomeController(MoviesContext movies)
